@@ -14,3 +14,6 @@ export function getStationById(_id: string): Station | null {
 
   return station;
 }
+export function getAllStations(): Station[] {
+  return stations;
+}

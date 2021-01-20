@@ -22,6 +22,7 @@ export default gql`
   }
 
   type Query {
-    station(id: String!): Station
+    station(id: String): Station,
+    stations: [Station]
   }
 `;

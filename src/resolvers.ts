@@ -1,5 +1,5 @@
 import { Station, Status } from "./types";
-import { getStationById, getStatusById } from "./db/index";
+import { getStationById, getStatusById, getAllStations } from "./db/index";
 
 export default {
   Station: {
@@ -11,8 +11,11 @@ export default {
     station: (
       {},
       { id }: { id: string }
-    ): Station | null => {
-      return getStationById(id);
+    ): Station | null | Station[] => {
+        return getStationById(id);
     },
+    stations: () => {
+      return getAllStations();
+    }
   },
 };
