@@ -22,8 +22,7 @@ export default gql`
   }
 
   type Query {
-    station(id: String): Station
     stations: [Station]
-    closestStation(lat: Float, lon: Float): Station
+    station(lat: Float, lon: Float): Station
   }
 `;

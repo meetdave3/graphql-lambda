@@ -1,6 +1,5 @@
 import { LatLon, Station, Status } from "./types";
 import {
-  getStationById,
   getStatusById,
   getAllStations,
   getClosestStation,
@@ -13,13 +12,10 @@ export default {
     },
   },
   Query: {
-    station: ({}, { id }: { id: string }): Station | null => {
-      return getStationById(id);
-    },
     stations: (): Station[] => {
       return getAllStations();
     },
-    closestStation: ({}, { lat, lon }: LatLon): Station | null => {
+    station: ({}, { lat, lon }: LatLon): Station | null => {
       return getClosestStation(lat, lon);
     },
   },
