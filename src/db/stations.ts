@@ -1,6 +1,6 @@
 import * as turf from "@turf/turf";
 
-import { Station } from "../types";
+import { Properties, Station } from "../types";
 import stationsData from "./data/stations-dump";
 
 const stations: Station[] = stationsData;
@@ -22,9 +22,8 @@ export function getAllStations(): Station[] {
 }
 
 export function getClosestStation(lat: number, lon: number): Station | null {
-  
   const targetPoint = turf.point([lat, lon]);
-  
+
   let station: Station | null = null;
   let coordinates: turf.Position[] | [] = [];
 
@@ -40,7 +39,7 @@ export function getClosestStation(lat: number, lon: number): Station | null {
       turf.Properties
     > = turf.points(coordinates);
     const nearest = turf.nearestPoint(targetPoint, featureCollection);
-    const properties: {featureIndex: number, distanceToPoint: number} = nearest.properties;
+    const properties: Properties = nearest.properties;
 
     station = stations[properties?.featureIndex];
   }

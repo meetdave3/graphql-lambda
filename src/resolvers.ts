@@ -1,5 +1,10 @@
-import { Station, Status } from "./types";
-import { getStationById, getStatusById, getAllStations, getClosestStation } from "./db/index";
+import { LatLon, Station, Status } from "./types";
+import {
+  getStationById,
+  getStatusById,
+  getAllStations,
+  getClosestStation,
+} from "./db/index";
 
 export default {
   Station: {
@@ -8,17 +13,14 @@ export default {
     },
   },
   Query: {
-    station: (
-      {},
-      { id }: { id: string }
-    ): Station | null => {
-        return getStationById(id);
+    station: ({}, { id }: { id: string }): Station | null => {
+      return getStationById(id);
     },
     stations: (): Station[] => {
       return getAllStations();
     },
-    closestStation: ({}, {lat, lon}: {lat: number, lon: number}): Station | null => {
+    closestStation: ({}, { lat, lon }: LatLon): Station | null => {
       return getClosestStation(lat, lon);
-    }
+    },
   },
 };
