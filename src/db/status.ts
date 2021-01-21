@@ -1,5 +1,6 @@
 import { Status } from '../types';
-import statusesData from './data/statuses-dump.json';
+import statusesData from './data/statuses-dump';
+
 const statuses: Status[] = statusesData;
 
 export function getStatusById(_id: string): Status | null {

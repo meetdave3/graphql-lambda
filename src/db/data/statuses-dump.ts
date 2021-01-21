@@ -1,4 +1,4 @@
-[
+export default [
   {
     "station_id": "2280",
     "is_installed": 1,

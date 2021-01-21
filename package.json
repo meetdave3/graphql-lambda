@@ -4,21 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf ./build && tsc",
-    "start": "npm run build && node build/index.js"
+    "dev": "sls offline start"
   },
   "author": "Meet Dave",
   "license": "ISC",
   "dependencies": {
-    "apollo-server": "2.19.2",
-    "@turf/turf": "6.3.0"
+    "apollo-server-lambda": "2.19.2",
+    "@turf/turf": "6.3.0",
+    "serverless-http": "2.6.1"
   },
   "devDependencies": {
     "@types/node": "^14.14.22",
     "nodemon": "^2.0.7",
     "rimraf": "^3.0.2",
+    "serverless": "1.74.1",
+    "serverless-offline": "6.4.0",
+    "serverless-dotenv-plugin": "3.0.0",
+    "serverless-plugin-typescript": "^1.1.9",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
   }

@@ -1,7 +1,7 @@
 import * as turf from "@turf/turf";
 
 import { Station } from "../types";
-import stationsData from "./data/stations-dump.json";
+import stationsData from "./data/stations-dump";
 
 const stations: Station[] = stationsData;
 
